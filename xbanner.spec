@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
+Group(pt):	X11/Aplicações/Gráficos
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
@@ -22,6 +23,11 @@ and/or the normal X background.
 
 Install XBanner if you'd like to change the look of your X login
 screen and/or X background.
+
+%description -l pl
+Program XBanner pozwala wy¶wietlaæ tekty, wzory i obrazki w g³ównym
+oknie, tak, ¿e u¿ytkownicy mog± konfigurowaæ ekran logowania XDM oraz
+zwyk³e t³o X.
 
 %prep
 %setup -q -n XBanner1.31
