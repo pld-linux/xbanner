@@ -7,7 +7,7 @@ Group:		Amusements/Graphics
 Source:		ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 Patch0:		xbanner-1.3-rh.patch
 Patch1:		xbanner-install.patch
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
