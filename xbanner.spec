@@ -27,7 +27,7 @@ screen and/or X background.
 %patch1 -p1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -35,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps,%{_libdir}/X11/app-defaults}
 
 # we stuck xsri in here for now, move it out after 6.0 to separate package
-make install ROOT="$RPM_BUILD_ROOT"
+%{__make} install ROOT="$RPM_BUILD_ROOT"
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
 
