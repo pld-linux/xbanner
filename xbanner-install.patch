@@ -1,16 +1,17 @@
 diff -ur XBanner1.31.orig/Makefile XBanner1.31/Makefile
 --- XBanner1.31.orig/Makefile	Mon Nov  1 00:45:51 1999
 +++ XBanner1.31/Makefile	Mon Nov  1 00:51:32 1999
-@@ -71,9 +71,9 @@
+@@ -71,9 +71,10 @@
  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
  
  install: freetemp xbanner xb_check 
 -	$(INSTALL) --strip --mode "0755" --owner root --group bin freetemp $(BINDIR)/freetemp
 -	$(INSTALL) --strip --mode "0755" --owner root --group bin xbanner $(BINDIR)/xbanner
 -	$(INSTALL) --strip --mode "0755" --owner root --group bin xb_check $(BINDIR)/xb_check
-+	$(INSTALL) --strip freetemp $(BINDIR)/freetemp
-+	$(INSTALL) --strip xbanner $(BINDIR)/xbanner
-+	$(INSTALL) --strip xb_check $(BINDIR)/xb_check
++	$(INSTALL) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) freetemp $(DESTDIR)$(BINDIR)/freetemp
++	$(INSTALL) xbanner $(DESTDIR)$(BINDIR)/xbanner
++	$(INSTALL) xb_check $(DESTDIR)$(BINDIR)/xb_check
  
  strip: exe
  	strip xbanner freetemp xb_check random_effect
