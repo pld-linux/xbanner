@@ -1,0 +1,20 @@
+--- XBanner1.31.orig/Makefile	2004-08-26 00:28:45.355463432 +0200
++++ XBanner1.31/Makefile	2004-08-26 00:31:14.051858144 +0200
+@@ -18,7 +18,7 @@
+ BINDIR	=/usr/local/bin/X11
+ 
+ # Library directories for Linux
+-XLIBDIR	=/usr/X11R6/lib
++XLIBDIR	=/usr/X11R6/lib64
+ 
+ # Include directory for gcc (if you get X11/Xlib.h: file not found)
+ #INCDIR =-I/usr/X11R6/include
+@@ -85,7 +85,7 @@
+ sbin: strip
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o xbanner xbanner.o colors.o \
+ 	plasma.o util.o linger.o pix.o effect.o xres.o backg.o \
+-	ripples.o /usr/X11R6/lib/libXpm.a -lX11 -lm
++	ripples.o /usr/X11R6/lib64/libXpm.a -lX11 -lm
+ 	$(TAR) -czvf XB1.31sbin.tgz xbanner freetemp xb_check random_effect
+ 	mv XB1.31sbin.tgz XB131sbin.tgz
+ 

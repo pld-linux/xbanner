@@ -9,6 +9,7 @@ Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 # Source0-md5:	df62cd1764b4c298c87f1747b6e82da6
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
+Patch2:		%{name}-amd64.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -31,6 +32,9 @@ zwyk³e t³o X.
 %setup -q -n XBanner1.31
 %patch0 -p1
 %patch1 -p1
+%ifarch amd64
+%patch0 -p1
+%endif
 
 %build
 %{__make} CFLAGS="%{rpmcflags}"
