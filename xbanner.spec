@@ -42,8 +42,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps,%{_libdir}/X11/
 # we stuck xsri in here for now, move it out after 6.0 to separate package
 %{__make} install ROOT="$RPM_BUILD_ROOT"
 
-gzip -9nf docs/{README*,*.txt}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
