@@ -1,21 +1,17 @@
-# TODO: kill linking with static libXpm, move to /usr
 Summary:	A program for customizing the look of the standard XDM interface
 Summary(pl):	Program do konfigurowania wygl±du XDM
 Name:		xbanner
 Version:	1.31
-Release:	8
+Release:	9
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 # Source0-md5:	df62cd1764b4c298c87f1747b6e82da6
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
-Patch2:		%{name}-amd64.patch
+Patch2:		%{name}-nostatic.patch
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		/usr/X11R6/man
 
 %description
 The XBanner program allows the display of text, patterns and images in
@@ -34,27 +30,27 @@ zwyk³e t³o X.
 %setup -q -n XBanner1.31
 %patch0 -p1
 %patch1 -p1
-%ifarch amd64
 %patch2 -p1
-%endif
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags}"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	XLIBDIR=/usr/X11R6/%{_lib}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps,%{_libdir}/X11/app-defaults}
 
-# we stuck xsri in here for now, move it out after 6.0 to separate package
-%{__make} install ROOT="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc samples docs/*
+%doc samples docs/{Changes.txt,Credits.txt,*.html,*.gif}
 %attr(755,root,root) %{_bindir}/freetemp
 %attr(755,root,root) %{_bindir}/xbanner
 %attr(755,root,root) %{_bindir}/xb_check
