@@ -1,0 +1,11 @@
+--- XBanner1.31.orig/Makefile	2004-08-26 03:13:40.822901104 +0200
++++ XBanner1.31/Makefile	2004-08-26 03:14:43.046441688 +0200
+@@ -85,7 +85,7 @@
+ sbin: strip
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o xbanner xbanner.o colors.o \
+ 	plasma.o util.o linger.o pix.o effect.o xres.o backg.o \
+-	ripples.o /usr/X11R6/lib/libXpm.a -lX11 -lm
++	ripples.o -lXpm -lX11 -lm
+ 	$(TAR) -czvf XB1.31sbin.tgz xbanner freetemp xb_check random_effect
+ 	mv XB1.31sbin.tgz XB131sbin.tgz
+ 
