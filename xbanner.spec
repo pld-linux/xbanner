@@ -1,3 +1,4 @@
+# TODO: kill linking with static libXpm, move to /usr
 Summary:	A program for customizing the look of the standard XDM interface
 Summary(pl):	Program do konfigurowania wygl±du XDM
 Name:		xbanner
@@ -10,6 +11,7 @@ Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
 Patch2:		%{name}-amd64.patch
+BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -37,11 +39,11 @@ zwyk³e t³o X.
 %endif
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps,%{_libdir}/X11/app-defaults}
 
 # we stuck xsri in here for now, move it out after 6.0 to separate package
