@@ -33,7 +33,7 @@ zwyk³e t³o X.
 %patch0 -p1
 %patch1 -p1
 %ifarch amd64
-%patch0 -p1
+%patch2 -p1
 %endif
 
 %build
