@@ -2,7 +2,7 @@ Summary:	A program for customizing the look of the standard XDM interface
 Summary(pl):	Program do konfigurowania wygl±du XDM
 Name:		xbanner
 Version:	1.31
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
