@@ -1,10 +1,11 @@
+Summary:	A program for customizing the look of the standard XDM interface
 Name:		xbanner
-Summary:	A program for customizing the look of the standard XDM interface.
 Version:	1.31
 Release:	7
-Copyright:	GPL
-Group:		Amusements/Graphics
-Source:		ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
+License:	GPL
+Group:		X11/Applications/Graphics
+Group(pl):	X11/Aplikacje/Grafika
+Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 Patch0:		xbanner-1.3-rh.patch
 Patch1:		xbanner-install.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -13,12 +14,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		/usr/X11R6/man
 
 %description
-The XBanner program allows the display of text, patterns and images
-in the root window, so users can customize the XDM style login screen
+The XBanner program allows the display of text, patterns and images in
+the root window, so users can customize the XDM style login screen
 and/or the normal X background.
 
-Install XBanner if you'd like to change the look of your X login screen
-and/or X background.
+Install XBanner if you'd like to change the look of your X login
+screen and/or X background.
 
 %prep
 %setup -q -n XBanner1.31
