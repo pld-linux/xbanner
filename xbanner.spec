@@ -6,6 +6,7 @@ Release:	7
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
+# Source0-md5:	df62cd1764b4c298c87f1747b6e82da6
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
