@@ -1,0 +1,24 @@
+--- XBanner1.3/Makefile.ewt	Wed Mar 19 16:04:33 1997
++++ XBanner1.3/Makefile	Thu Mar 20 10:25:37 1997
+@@ -14,10 +14,10 @@
+ GZIP	=gzip
+ 
+ # Binary directory for make install
+-BINDIR	=/usr/local/bin/X11
++BINDIR	= $(ROOT)/usr/X11R6/bin
+ 
+ # Library directories for Linux
+-XLIBDIR	=/usr/X11R6/lib
++XLIBDIR	= /usr/X11R6/lib
+ 
+ # Library directories for the Ultrix (probably most Unixes)
+ #XLIBDIR =/usr/lib/X11
+@@ -30,7 +30,7 @@
+ 	$(CC) $(CFLAGS) $(XPM) -c $*.c
+ 
+ # Linux CFLAGS (actually generic gcc)
+-CFLAGS=-Wall -O2
++CFLAGS=$(RPM_OPT_FLAGS)
+ 
+ # Want static binaries?
+ #CFLAGS=-Wall -O2 -static
