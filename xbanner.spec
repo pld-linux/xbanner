@@ -1,13 +1,15 @@
 Summary:	A program for customizing the look of the standard XDM interface
+Summary(pl):	Program do konfigurowania wygl±du XDM
 Name:		xbanner
 Version:	1.31
 Release:	7
 License:	GPL
 Group:		X11/Applications/Graphics
+Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
-Patch0:		xbanner-1.3-rh.patch
-Patch1:		xbanner-install.patch
+Patch0:		%{name}-1.3-rh.patch
+Patch1:		%{name}-install.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -27,7 +29,7 @@ screen and/or X background.
 %patch1 -p1
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,8 +38,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/X11/pixmaps,%{_libdir}/X11/
 
 # we stuck xsri in here for now, move it out after 6.0 to separate package
 %{__make} install ROOT="$RPM_BUILD_ROOT"
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
 
 gzip -9nf docs/{README*,*.txt}
 
