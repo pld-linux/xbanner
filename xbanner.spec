@@ -22,7 +22,7 @@ Install XBanner if you'd like to change the look of your X login
 screen and/or X background.
 
 %description -l pl
-Program XBanner pozwala wy¶wietlaæ tekty, wzory i obrazki w g³ównym
+Program XBanner pozwala wy¶wietlaæ teksty, wzory i obrazki w g³ównym
 oknie, tak, ¿e u¿ytkownicy mog± konfigurowaæ ekran logowania XDM oraz
 zwyk³e t³o X.
 
