@@ -5,9 +5,6 @@ Version:	1.31
 Release:	7
 License:	GPL
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
-Group(pt):	X11/Aplicações/Gráficos
 Source0:	ftp://physics.fullerton.edu/pub/Linux/XBanner/XBanner%{version}.tar.gz
 Patch0:		%{name}-1.3-rh.patch
 Patch1:		%{name}-install.patch
