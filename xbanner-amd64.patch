@@ -1,11 +1,11 @@
---- XBanner1.31.orig/Makefile.std	2004-08-26 00:28:45.355463432 +0200
-+++ XBanner1.31/Makefile.std	2004-08-26 00:31:14.051858144 +0200
+--- XBanner1.31.orig/Makefile	2004-08-26 03:13:40.822901104 +0200
++++ XBanner1.31/Makefile	2004-08-26 03:14:43.046441688 +0200
 @@ -18,7 +18,7 @@
- BINDIR	=/usr/local/bin/X11
+ BINDIR	= $(ROOT)/usr/X11R6/bin
  
  # Library directories for Linux
--XLIBDIR	=/usr/X11R6/lib
-+XLIBDIR	=/usr/X11R6/lib64
+-XLIBDIR	= /usr/X11R6/lib
++XLIBDIR	= /usr/X11R6/lib64
  
  # Include directory for gcc (if you get X11/Xlib.h: file not found)
  #INCDIR =-I/usr/X11R6/include
