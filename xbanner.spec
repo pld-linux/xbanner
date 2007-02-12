@@ -1,5 +1,5 @@
 Summary:	A program for customizing the look of the standard XDM interface
-Summary(pl):	Program do konfigurowania wygl±du XDM
+Summary(pl.UTF-8):   Program do konfigurowania wyglÄ…du XDM
 Name:		xbanner
 Version:	1.31
 Release:	9
@@ -21,10 +21,10 @@ and/or the normal X background.
 Install XBanner if you'd like to change the look of your X login
 screen and/or X background.
 
-%description -l pl
-Program XBanner pozwala wy¶wietlaæ teksty, wzory i obrazki w g³ównym
-oknie, tak, ¿e u¿ytkownicy mog± konfigurowaæ ekran logowania XDM oraz
-zwyk³e t³o X.
+%description -l pl.UTF-8
+Program XBanner pozwala wyÅ›wietlaÄ‡ teksty, wzory i obrazki w gÅ‚Ã³wnym
+oknie, tak, Å¼e uÅ¼ytkownicy mogÄ… konfigurowaÄ‡ ekran logowania XDM oraz
+zwykÅ‚e tÅ‚o X.
 
 %prep
 %setup -q -n XBanner1.31
