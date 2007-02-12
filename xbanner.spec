@@ -1,5 +1,5 @@
 Summary:	A program for customizing the look of the standard XDM interface
-Summary(pl.UTF-8):   Program do konfigurowania wyglądu XDM
+Summary(pl.UTF-8):	Program do konfigurowania wyglądu XDM
 Name:		xbanner
 Version:	1.31
 Release:	9
